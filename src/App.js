@@ -1,28 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import LoginForm from './components/loginForm';
 import './App.css';
+import Navbar from './components/navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <FontAwesomeIcon icon={faCoffee} />
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="budgetee-app">
+      <Navbar />
+      <div className="container">
+        <LoginForm />
+      </div>
     </div>
   );
 }
