@@ -1,17 +1,20 @@
 import React from 'react';
 import savings from '../assets/savings.svg';
-import googleLogo from '../assets/google-brands.svg';
+import GoogleAuth from './googleAuth';
 
 class LoginForm extends React.Component {
+  componentDidUpdate() {
+    if (this.props.isSignedIn) {
+      this.props.history.replace('/log');
+    }
+  }
+
   render() {
     return (
       <div className="login-content">
         <div className="login-form grid">
           <img src={savings} alt="saving logo" className="saving-img" />
-          <button className="btn btn-primary btn-google-login">
-            <img src={googleLogo} alt="google" className="google-logo" />
-            &nbsp;&nbsp;&nbsp;Login with Google
-          </button>
+          <GoogleAuth onSignIn={this.props.onSignIn} />
         </div>
         <div className="developer">
           Developed by <strong>Vannyou_TANG</strong>
