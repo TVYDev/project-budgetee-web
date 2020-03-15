@@ -2,13 +2,15 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronCircleUp,
-  faChevronCircleDown,
-  faTimesCircle
+  faChevronCircleDown
 } from '@fortawesome/free-solid-svg-icons';
+import LogEntryForm from './logEntryForm';
+import LogEntryItem from './logEntryItem';
 
 class LogEntry extends React.Component {
   render() {
-    const { type } = this.props;
+    const { type, data, currency, onEntryAdd } = this.props;
+    const { entries } = data;
 
     return (
       <div className={`log-entry-content ${type}`}>
@@ -21,50 +23,16 @@ class LogEntry extends React.Component {
             />
           </div>
           <div className="total">
-            <span className="amount">0</span>&nbsp;
-            <span className="currency">៛</span>
+            <span className="amount">{data[`total_${currency}`]}</span>&nbsp;
+            <span className="currency">{currency === 'khr' ? '៛' : '$'}</span>
           </div>
         </div>
         <div className="entry-list">
-          <div className="entry-item grid">
-            <div className="delete-icon">
-              <FontAwesomeIcon icon={faTimesCircle} />
-            </div>
-            <div className="entry-name">Phone Top Up</div>
-            <div className="entry-amount">
-              <span className="amount">5,000</span>&nbsp;
-              <span className="currency">៛</span>
-            </div>
-          </div>
-          <div className="entry-item grid">
-            <div className="delete-icon">
-              <FontAwesomeIcon icon={faTimesCircle} />
-            </div>
-            <div className="entry-name">Phone Top Up</div>
-            <div className="entry-amount">
-              <span className="amount">5,000</span>&nbsp;
-              <span className="currency">$</span>
-            </div>
-          </div>
+          {entries.map(entry => (
+            <LogEntryItem key={entry.name} data={entry} />
+          ))}
         </div>
-        <div className="entry-form grid">
-          <select className="form-control sel-log-name">
-            <option value="lunch">Lunch</option>
-            <option value="petrol">Petrol</option>
-          </select>
-          <input
-            type="number"
-            className="form-control txt-log-amount"
-            placeholder="Amount"
-          />
-          <select className="form-control sel-log-currency">
-            <option value="khr">៛ Riel</option>
-            <option value="usd">$ Dollar </option>
-          </select>
-          <button type="button" className="btn-primary btn-add-log">
-            Add
-          </button>
-        </div>
+        <LogEntryForm onEntryAdd={onEntryAdd} />
       </div>
     );
   }

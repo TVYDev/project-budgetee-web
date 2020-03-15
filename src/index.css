@@ -25,6 +25,10 @@ button.btn-primary:focus {
   border: 1px solid var(--contrast-primary);
   color: white;
 }
+button.btn-primary:focus {
+  outline: none;
+  box-shadow: none;
+}
 .form-control,
 .form-control:focus {
   border-radius: 20px;
