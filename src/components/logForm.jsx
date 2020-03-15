@@ -1,4 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import LogEntry from './logEntry';
+import LogDayNavigator from './logDayNavigator';
 
 class LogForm extends React.Component {
   componentDidUpdate() {
@@ -7,7 +11,17 @@ class LogForm extends React.Component {
     }
   }
   render() {
-    return <h1>Log Form</h1>;
+    return (
+      <div className="log-form-content container">
+        <LogDayNavigator />
+        <div className="log-total-amount">
+          <FontAwesomeIcon icon={faCheckCircle} />
+          &nbsp;&nbsp;&nbsp;Total = <span>+3,000 KHR</span>
+        </div>
+        <LogEntry />
+        <LogEntry />
+      </div>
+    );
   }
 }
 

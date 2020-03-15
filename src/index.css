@@ -3,6 +3,7 @@
   --primary: #31363a;
   --contrast-primary: #fcc45e;
   --secondary: #dad9d4;
+  --primary-dark: #292b2e;
   --google: #de5246;
 }
 
@@ -20,6 +21,12 @@ button.btn-primary:hover,
 button.btn-primary:focus {
   background-color: var(--contrast-primary);
   border: 1px solid var(--contrast-primary);
+  color: white;
+}
+.form-control,
+.form-control:focus {
+  border-radius: 20px;
+  background-color: var(--primary);
   color: white;
 }
 
@@ -78,7 +85,89 @@ body {
   margin-bottom: 20px;
   color: var(--secondary);
 }
-
+.log-form-content .log-total-amount {
+  text-align: center;
+  font-size: 1.2em;
+  color: white;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.log-day-navigator-content {
+  justify-items: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 20px;
+}
+.log-day-navigator-content .previous-day {
+  grid-column: 1/2;
+  font-size: 1.5em;
+}
+.log-day-navigator-content .day-to-log {
+  grid-column: 2/8;
+  font-weight: bold;
+}
+.log-day-navigator-content .next-day {
+  grid-column: 8/9;
+  font-size: 1.5em;
+}
+.log-entry-content {
+  margin-bottom: 30px;
+}
+.log-entry-content .entry-total {
+  background-color: var(--primary-dark);
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: white;
+}
+.log-entry-content .entry-total .icon {
+  grid-column: 1/2;
+  font-size: 1.5em;
+  align-self: center;
+}
+.log-entry-content .entry-total .total {
+  grid-column: 2/9;
+  font-weight: bold;
+  font-size: 1.2em;
+  justify-self: right;
+  align-self: center;
+}
+.log-entry-content .entry-list {
+  margin-top: 10px;
+  padding: 0 15px;
+  font-size: 0.9em;
+  color: white;
+}
+.log-entry-content .entry-list .entry-item {
+  padding: 5px 0;
+  border-bottom: 1px solid white;
+}
+.log-entry-content .entry-list .entry-item .delete-icon {
+  grid-column: 1/2;
+}
+.log-entry-content .entry-list .entry-item .entry-name {
+  grid-column: 2/6;
+}
+.log-entry-content .entry-list .entry-item .entry-amount {
+  grid-column: 6/9;
+  justify-self: right;
+}
+.log-entry-content .entry-form {
+  margin-top: 20px;
+  padding: 0 15px;
+}
+.log-entry-content .entry-form .sel-log-name {
+  grid-column: 1/9;
+}
+.log-entry-content .entry-form .txt-log-amount {
+  grid-column: 1/6;
+}
+.log-entry-content .entry-form .sel-log-currency {
+  grid-column: 6/9;
+}
+.log-entry-content .entry-form .btn-add-log {
+  grid-column: 3/7;
+}
 /* small table styles */
 @media screen and (min-width: 620px) {
   .login-content {

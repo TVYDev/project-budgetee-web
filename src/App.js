@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import LoginForm from './components/loginForm';
 import './App.css';
+import LoginForm from './components/loginForm';
 import Navbar from './components/navbar';
 import LogForm from './components/logForm';
 
