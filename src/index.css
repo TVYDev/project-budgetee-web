@@ -5,6 +5,8 @@
   --secondary: #dad9d4;
   --primary-dark: #292b2e;
   --google: #de5246;
+  --red: #de5246;
+  --green: #78c257;
 }
 
 /* reset */
@@ -35,6 +37,9 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--primary);
+}
+.currency {
+  font-size: 1.1em;
 }
 
 /* fonts */
@@ -87,10 +92,20 @@ body {
 }
 .log-form-content .log-total-amount {
   text-align: center;
-  font-size: 1.2em;
-  color: white;
+  font-size: 1.1em;
+  color: var(--contrast-primary);
   font-style: italic;
   margin-bottom: 10px;
+  font-weight: bold;
+}
+.log-form-content .log-total-amount.negative .amount::before {
+  content: '- ';
+}
+.log-form-content .log-total-amount.positive .amount::before {
+  content: '+ ';
+}
+.log-form-content .log-entries .log-entry-content {
+  grid-column: 1/9;
 }
 .log-day-navigator-content {
   justify-items: center;
@@ -111,6 +126,11 @@ body {
   grid-column: 8/9;
   font-size: 1.5em;
 }
+.log-day-navigator-content .previous-day:hover,
+.log-day-navigator-content .next-day:hover {
+  color: var(--contrast-primary);
+  cursor: pointer;
+}
 .log-entry-content {
   margin-bottom: 30px;
 }
@@ -119,6 +139,12 @@ body {
   padding: 5px 15px;
   border-radius: 15px;
   color: white;
+}
+.log-entry-content.expense .entry-total {
+  color: var(--red);
+}
+.log-entry-content.income .entry-total {
+  color: var(--green);
 }
 .log-entry-content .entry-total .icon {
   grid-column: 1/2;
@@ -131,6 +157,12 @@ body {
   font-size: 1.2em;
   justify-self: right;
   align-self: center;
+}
+.log-entry-content.expense .entry-total .total::before {
+  content: '- ';
+}
+.log-entry-content.income .entry-total .total::before {
+  content: '+ ';
 }
 .log-entry-content .entry-list {
   margin-top: 10px;
@@ -145,12 +177,23 @@ body {
 .log-entry-content .entry-list .entry-item .delete-icon {
   grid-column: 1/2;
 }
+.log-entry-content .entry-list .entry-item .delete-icon svg:hover {
+  cursor: pointer;
+  color: var(--contrast-primary);
+  font-size: 1.3em;
+}
 .log-entry-content .entry-list .entry-item .entry-name {
   grid-column: 2/6;
 }
 .log-entry-content .entry-list .entry-item .entry-amount {
   grid-column: 6/9;
   justify-self: right;
+}
+.log-entry-content.expense .entry-list .entry-item .entry-amount::before {
+  content: '- ';
+}
+.log-entry-content.income .entry-list .entry-item .entry-amount::before {
+  content: '+ ';
 }
 .log-entry-content .entry-form {
   margin-top: 20px;
@@ -168,7 +211,25 @@ body {
 .log-entry-content .entry-form .btn-add-log {
   grid-column: 3/7;
 }
-/* small table styles */
+.log-entry-content.expense .entry-form .btn-add-log {
+  background-color: var(--red);
+  color: white;
+  border: 2px solid var(--red);
+}
+.log-entry-content.expense .entry-form .btn-add-log:hover {
+  background-color: white;
+  color: var(--red);
+}
+.log-entry-content.income .entry-form .btn-add-log {
+  background-color: var(--green);
+  color: white;
+  border: 2px solid var(--green);
+}
+.log-entry-content.income .entry-form .btn-add-log:hover {
+  background-color: white;
+  color: var(--green);
+}
+/* small tablet styles */
 @media screen and (min-width: 620px) {
   .login-content {
     margin-top: 30px;
@@ -200,5 +261,11 @@ body {
   }
   .login-content .developer {
     margin-top: 80px;
+  }
+  .log-form-content .log-entries .log-entry-content:first-child {
+    grid-column: 1/5;
+  }
+  .log-form-content .log-entries .log-entry-content:last-child {
+    grid-column: 5/9;
   }
 }

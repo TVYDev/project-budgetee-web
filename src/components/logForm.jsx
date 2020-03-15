@@ -14,12 +14,15 @@ class LogForm extends React.Component {
     return (
       <div className="log-form-content container">
         <LogDayNavigator />
-        <div className="log-total-amount">
+        <div className="log-total-amount positive">
           <FontAwesomeIcon icon={faCheckCircle} />
-          &nbsp;&nbsp;&nbsp;Total = <span>+3,000 KHR</span>
+          &nbsp;&nbsp;&nbsp;Total = <span className="amount">3,000</span>&nbsp;
+          <span className="currency">៛</span>
         </div>
-        <LogEntry />
-        <LogEntry />
+        <div className="log-entries grid">
+          <LogEntry type="expense" />
+          <LogEntry type="income" />
+        </div>
       </div>
     );
   }
