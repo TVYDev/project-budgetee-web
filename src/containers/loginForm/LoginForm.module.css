@@ -1,0 +1,41 @@
+.loginForm {
+    margin-top: 75px;
+    text-align: center;
+}
+.savingsSvg {
+    grid-column: 1/9;
+    justify-self: center;
+    width: 300px;
+    margin-bottom: 50px;
+}
+.developer {
+    font-size: 0.8em;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+/* Small tablets size */
+@media (min-width: 620px) {
+    .loginForm {
+        margin-top: 30px;
+    }
+    .savingsSvg {
+        width: 350px;
+    }
+    .developer {
+        margin-top: 60px;
+    }
+}
+
+/* Large tablets and laptops size */
+@media (min-width: 960px) {
+    .savingsSvg {
+        width: 400px;
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+    .developer {
+        margin-top: 80px;
+    }
+}

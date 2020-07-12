@@ -1,275 +1,45 @@
-/* variables */
+/* =======================================Variables */
 :root {
-  --primary: #31363a;
-  --contrast-primary: #fcc45e;
-  --secondary: #dad9d4;
-  --primary-dark: #292b2e;
-  --google: #de5246;
-  --red: #de5246;
-  --green: #78c257;
+    --primary: #31363a;
+    --contrast-primary: #fcc45e;
+    --secondary: #dad9d4;
+    --primary-dark: #292b2e;
+    --google: #de5246;
+    --red: #de5246;
+    --green: #78c257;
 }
 
-/* reset */
-button.btn-primary {
-  background-color: white;
-  border-radius: 20px;
-  width: 90%;
-  color: var(--primary);
-  font-weight: bold;
-  font-size: 1.1em;
-  border: 1px solid var(--primary);
+/* =======================================Base Styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary);
 }
+
+/* =======================================Overidden styles of Bootstrap*/
+button.btn-primary {
+    background-color: white;
+    border-radius: 20px;
+    width: 90%;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 1px solid var(--primary);
+}
+
 button.btn-primary:hover,
 button.btn-primary:focus {
-  background-color: var(--contrast-primary);
-  border: 1px solid var(--contrast-primary);
-  color: white;
+    background-color: var(--contrast-primary);
+    border: 1px solid var(--contrast-primary);
+    color: white;
 }
 button.btn-primary:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 .form-control,
 .form-control:focus {
-  border-radius: 20px;
-  background-color: var(--primary);
-  color: white;
-}
-
-/* base styles */
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--primary);
-}
-.currency {
-  font-size: 1.1em;
-}
-
-/* fonts */
-
-/* mobile styles */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 10px;
-  box-sizing: border-box;
-}
-.btn-primary.btn-logout {
-  width: 50px;
-  background-color: var(--secondary);
-}
-.auth-name {
-  font-size: 0.85em;
-  color: var(--secondary);
-}
-#budgetee-logo {
-  text-align: center;
-  margin-top: 20px;
-  width: 170px;
-}
-.login-content {
-  margin-top: 75px;
-  text-align: center;
-}
-.login-content .saving-img {
-  grid-column: 1/9;
-  justify-self: center;
-  width: 300px;
-  margin-bottom: 50px;
-}
-.login-content .btn-google-signin {
-  color: var(--google);
-  grid-row: 2;
-  grid-column: 1/9;
-  justify-self: center;
-}
-.login-content .google-logo {
-  width: 25px;
-  color: var(--google);
-}
-.login-content .developer {
-  font-size: 0.8em;
-  margin-top: 150px;
-  margin-bottom: 20px;
-  color: var(--secondary);
-}
-.log-form-content .log-total-amount {
-  text-align: center;
-  font-size: 1.1em;
-  color: var(--contrast-primary);
-  font-style: italic;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.log-form-content .log-total-amount.negative .amount::before {
-  content: '- ';
-}
-.log-form-content .log-total-amount.positive .amount::before {
-  content: '+ ';
-}
-.log-form-content .log-entries .log-entry-content {
-  grid-column: 1/9;
-}
-.log-day-navigator-content {
-  justify-items: center;
-  align-items: center;
-  font-size: 2em;
-  color: white;
-  margin-bottom: 20px;
-}
-.log-day-navigator-content .previous-day {
-  grid-column: 1/2;
-  font-size: 1.5em;
-}
-.log-day-navigator-content .day-to-log {
-  grid-column: 2/8;
-  font-weight: bold;
-}
-.log-day-navigator-content .next-day {
-  grid-column: 8/9;
-  font-size: 1.5em;
-}
-.log-day-navigator-content .previous-day:hover,
-.log-day-navigator-content .next-day:hover {
-  color: var(--contrast-primary);
-  cursor: pointer;
-}
-.log-entry-content {
-  margin-bottom: 30px;
-}
-.log-entry-content .entry-total {
-  background-color: var(--primary-dark);
-  padding: 5px 15px;
-  border-radius: 15px;
-  color: white;
-}
-.log-entry-content.expense .entry-total {
-  color: var(--red);
-}
-.log-entry-content.income .entry-total {
-  color: var(--green);
-}
-.log-entry-content .entry-total .icon {
-  grid-column: 1/2;
-  font-size: 1.5em;
-  align-self: center;
-}
-.log-entry-content .entry-total .total {
-  grid-column: 2/9;
-  font-weight: bold;
-  font-size: 1.2em;
-  justify-self: right;
-  align-self: center;
-}
-.log-entry-content.expense .entry-total .total::before {
-  content: '- ';
-}
-.log-entry-content.income .entry-total .total::before {
-  content: '+ ';
-}
-.log-entry-content .entry-list {
-  margin-top: 10px;
-  padding: 0 15px;
-  font-size: 0.9em;
-  color: white;
-}
-.log-entry-content .entry-list .entry-item {
-  padding: 5px 0;
-  border-bottom: 1px solid white;
-}
-.log-entry-content .entry-list .entry-item .delete-icon {
-  grid-column: 1/2;
-}
-.log-entry-content .entry-list .entry-item .delete-icon svg:hover {
-  cursor: pointer;
-  color: var(--contrast-primary);
-  font-size: 1.3em;
-}
-.log-entry-content .entry-list .entry-item .entry-name {
-  grid-column: 2/6;
-}
-.log-entry-content .entry-list .entry-item .entry-amount {
-  grid-column: 6/9;
-  justify-self: right;
-}
-.log-entry-content.expense .entry-list .entry-item .entry-amount::before {
-  content: '- ';
-}
-.log-entry-content.income .entry-list .entry-item .entry-amount::before {
-  content: '+ ';
-}
-.log-entry-content .entry-form {
-  margin-top: 20px;
-  padding: 0 15px;
-}
-.log-entry-content .entry-form .sel-log-name {
-  grid-column: 1/9;
-}
-.log-entry-content .entry-form .txt-log-amount {
-  grid-column: 1/6;
-}
-.log-entry-content .entry-form .sel-log-currency {
-  grid-column: 6/9;
-}
-.log-entry-content .entry-form .btn-add-log {
-  grid-column: 3/7;
-}
-.log-entry-content.expense .entry-form .btn-add-log {
-  background-color: var(--red);
-  color: white;
-  border: 2px solid var(--red);
-}
-.log-entry-content.expense .entry-form .btn-add-log:hover {
-  background-color: white;
-  color: var(--red);
-}
-.log-entry-content.income .entry-form .btn-add-log {
-  background-color: var(--green);
-  color: white;
-  border: 2px solid var(--green);
-}
-.log-entry-content.income .entry-form .btn-add-log:hover {
-  background-color: white;
-  color: var(--green);
-}
-/* small tablet styles */
-@media screen and (min-width: 620px) {
-  .login-content {
-    margin-top: 30px;
-  }
-  .login-content .saving-img {
-    width: 350px;
-  }
-  .login-content .developer {
-    margin-top: 60px;
-  }
-}
-
-/* large tablet & laptop styles */
-@media screen and (min-width: 960px) {
-  .grid {
-    max-width: 1060px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .login-content .saving-img {
-    width: 400px;
-    grid-column: 1/5;
-    grid-row: 1;
-  }
-  .login-content .btn-google-signin {
-    grid-row: 1;
-    grid-column: 5/9;
-    align-self: center;
-  }
-  .login-content .developer {
-    margin-top: 80px;
-  }
-  .log-form-content .log-entries .log-entry-content:first-child {
-    grid-column: 1/5;
-  }
-  .log-form-content .log-entries .log-entry-content:last-child {
-    grid-column: 5/9;
-  }
+    border-radius: 20px;
+    background-color: var(--primary);
+    color: white;
 }

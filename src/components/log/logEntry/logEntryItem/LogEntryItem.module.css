@@ -1,0 +1,25 @@
+.entryItem {
+    padding: 5px 0;
+    border-bottom: 1px solid white;
+}
+.deleteIcon {
+    grid-column: 1/2;
+}
+.deleteIcon svg:hover {
+    cursor: pointer;
+    color: var(--contrast-primary);
+    font-size: 1.3em;
+}
+.entryName {
+    grid-column: 2/6;
+}
+.entryAmount {
+    grid-column: 6/9;
+    justify-self: right;
+}
+.log-entry-content.expense .entry-list .entry-item .entry-amount::before {
+    content: '- ';
+}
+.log-entry-content.income .entry-list .entry-item .entry-amount::before {
+    content: '+ ';
+}

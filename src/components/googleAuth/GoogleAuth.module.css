@@ -1,0 +1,20 @@
+.btnGoogleSignIn {
+    color: var(--google);
+    grid-row: 2;
+    grid-column: 1/9;
+    justify-self: center;
+}
+
+.googleLogo {
+    width: 25px;
+    color: var(--google);
+}
+
+/* Large tabets and laptops size */
+@media (min-width: 960px) {
+    .btnGoogleSignIn {
+        grid-row: 1;
+        grid-column: 5/9;
+        align-self: center;
+    }
+}

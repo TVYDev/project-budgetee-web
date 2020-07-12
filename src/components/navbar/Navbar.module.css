@@ -1,0 +1,15 @@
+.authName {
+    font-size: 0.85em;
+    color: var(--secondary);
+}
+
+.btnLogout {
+    width: 50px;
+    background-color: var(--secondary);
+}
+
+#budgeteeLogo {
+    text-align: center;
+    margin-top: 20px;
+    width: 170px;
+}

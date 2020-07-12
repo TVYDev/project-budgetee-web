@@ -1,0 +1,34 @@
+.entryForm {
+    margin-top: 20px;
+    padding: 0 15px;
+}
+.selLogName {
+    grid-column: 1/9;
+}
+.txtLogAmount {
+    grid-column: 1/6;
+}
+.selLogCurrency {
+    grid-column: 6/9;
+}
+.btnAddLog {
+    grid-column: 3/7;
+}
+:global(.expense) .entryForm .btnAddLog {
+    background-color: var(--red);
+    color: white;
+    border: 2px solid var(--red);
+}
+:global(.expense) .entryForm .btnAddLog:hover {
+    background-color: white;
+    color: var(--red);
+}
+:global(.income) .entryForm .btnAddLog {
+    background-color: var(--green);
+    color: white;
+    border: 2px solid var(--green);
+}
+:global(.income) .entryForm .btnAddLog:hover {
+    background-color: white;
+    color: var(--green);
+}

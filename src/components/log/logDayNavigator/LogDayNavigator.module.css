@@ -1,0 +1,24 @@
+.logDayNavigator {
+    justify-items: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+}
+.previousDay {
+    grid-column: 1/2;
+    font-size: 1.5em;
+}
+.dayToLog {
+    grid-column: 2/8;
+    font-weight: bold;
+}
+.nextDay {
+    grid-column: 8/9;
+    font-size: 1.5em;
+}
+.previousDay:hover,
+.nextDay:hover {
+    color: var(--contrast-primary);
+    cursor: pointer;
+}

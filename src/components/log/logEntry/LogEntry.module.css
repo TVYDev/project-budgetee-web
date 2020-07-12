@@ -1,0 +1,55 @@
+.logEntry {
+    margin-bottom: 30px;
+    grid-column: 1/9;
+}
+
+.entryTotal {
+    background-color: var(--primary-dark);
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: white;
+}
+
+:global(.expense) .entryTotal {
+    color: var(--red);
+}
+:global(.income) .entryTotal {
+    color: var(--green);
+}
+
+.icon {
+    grid-column: 1/2;
+    font-size: 1.5em;
+    align-self: center;
+}
+
+.total {
+    grid-column: 2/9;
+    font-weight: bold;
+    font-size: 1.2em;
+    justify-self: right;
+    align-self: center;
+}
+:global(.expense) .entryTotal .total::before {
+    content: '- ';
+}
+:global(.income) .entryTotal .total::before {
+    content: '+ ';
+}
+
+.entryList {
+    margin-top: 10px;
+    padding: 0 15px;
+    font-size: 0.9em;
+    color: white;
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 960px) {
+    .logEntry:first-child {
+        grid-column: 1/5;
+    }
+    .logEntry:last-child {
+        grid-column: 5/9;
+    }
+}
